@@ -130,3 +130,32 @@ TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
+TW_USE_EXTERNAL_STORAGE := true
+TW_EXCLUDE_APEX := true
+TW_NO_BIND_SYSTEM := true
+TW_PREPARE_DATA_MEDIA_EARLY := true
+TW_FORCE_KEYMASTER_VER := true
+
+# VERSION
+TW_DEVICE_VERSION := MrFluffyOven_4_U4
+
+# USB
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_USE_NEW_MINADBD := true
+
+# Boot Mode
+TW_NO_REBOOT_BOOTLOADER := true
+TW_INCLUDE_FASTBOOTD := true
+TW_HAS_DOWNLOAD_MODE := true
+
+# Copy Out
+TARGET_COPY_OUT_VENDOR := vendor
+
+# Props
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+TW_INCLUDE_LIBRESETPROP := true
+TW_INCLUDE_RESETPROP := true
+TW_NO_LEGACY_PROPS := true
+
+# Modules
+TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules)\")
